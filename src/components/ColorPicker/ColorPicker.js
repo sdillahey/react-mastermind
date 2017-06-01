@@ -3,7 +3,9 @@ import React from 'react';
 const ColorPicker = (props) => {
   return (
     <div>
-      This is the ColorPicker
+      {props.colors.map((color, idx) =>
+        <div key={idx}>{color}</div>
+      )}
     </div>
   );
 }

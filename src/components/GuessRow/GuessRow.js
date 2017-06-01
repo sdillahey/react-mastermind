@@ -5,7 +5,6 @@ import GuessScore from '../GuessScore/GuessScore';
 const GuessRow = (props) => {
   return (
     <div>
-      This is the row
       <GuessPegs />
       <GuessScore />
     </div>
