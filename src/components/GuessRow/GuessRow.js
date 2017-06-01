@@ -4,11 +4,11 @@ import GuessScore from '../GuessScore/GuessScore';
 
 const GuessRow = (props) => {
   return (
-    <div>
-      <GuessPegs />
-      <GuessScore />
-    </div>
-    );
+      <div>
+        <GuessPegs guess={props.guess}/>
+        <GuessScore />
+      </div>
+  );
 }
 
 export default GuessRow;

@@ -10,14 +10,20 @@ class App extends Component {
     super();
     let colors = ['#155765', '#57652A', '#AB9353', '#4D2C3D'];
     this.state = {
-      colors: colors
+      colors: colors,
+      secretCode: ['#155765', '#57652A', '#AB9353', '#4D2C3D'],
+      selColorIdx: 0,
+      guesses: [this.getNewGuess()]
     };
   }
+
+  getNewGuess = () => ['#155765', '#57652A', '#AB9353', '#4D2C3D'];
+
   render() {
     return (
       <div>
         <header className="App-header">React Mastermind</header>
-        <GameBoard />
+        <GameBoard guesses={this.state.guesses}/>
         <ColorPicker colors={this.state.colors}/>
         <NewGameButton />
         <ScoreButton />
