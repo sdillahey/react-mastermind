@@ -3,10 +3,12 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: white;
   height: 50px;
   padding: 20px;
-  color: white;
+  color: lightgray;
+  text-transform: uppercase;
+  letter-spacing: 9px;
   font-size: 40px;
   text-align: center;
 }

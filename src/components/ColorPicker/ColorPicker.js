@@ -1,10 +1,11 @@
 import React from 'react';
+import './ColorPicker.css';
 
 const ColorPicker = (props) => {
   return (
     <div>
       {props.colors.map((color, idx) =>
-        <div key={idx}>{color}</div>
+        <div className="picker" key={idx} style={{backgroundColor: color}}></div>
       )}
     </div>
   );

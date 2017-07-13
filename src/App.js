@@ -8,16 +8,16 @@ import ScoreButton from './components/ScoreButton/ScoreButton';
 class App extends Component {
   constructor() {
     super();
-    let colors = ['#155765', '#57652A', '#AB9353', '#4D2C3D'];
+    let colors = ['#A80094', '#DD0038', '#FF732F', '#890022'];
     this.state = {
       colors: colors,
-      secretCode: ['#155765', '#57652A', '#AB9353', '#4D2C3D'],
+      secretCode: ['#A80094', '#DD0038', '#FF732F', '#890022'],
       selColorIdx: 0,
       guesses: [this.getNewGuess()]
     };
   }
 
-  getNewGuess = () => ['#155765', '#57652A', '#AB9353', '#4D2C3D'];
+  getNewGuess = () => ['#A80094', '#DD0038', '#FF732F', '#890022'];
 
   render() {
     return (

@@ -2,9 +2,9 @@ import React from 'react'
 
 const NewGameButton = (props) => {
   return (
-    <div>
+    <button>
       New Game
-    </div>
+    </button>
     );
 }
 
