@@ -6,7 +6,10 @@ const GameBoard = (props) => {
   return (
     <div>
       {props.guesses.map((guess, idx) => (
-        <GuessRow guess={guess} key={idx}/>
+        <GuessRow 
+          guess={guess} 
+          pickGuess={props.pickGuess}
+          key={idx}/>
       ))}
     </div>
   );

@@ -6,7 +6,7 @@ const GuessPegs = (props) => {
   return (
     <div className="GuessPegs">
       {props.guess.map((g, idx) => (
-        <GuessPeg g={g} key={idx}/>
+        <GuessPeg g={g} idx={idx} key={idx} pickGuess={props.pickGuess}/>
       ))}
     </div>
   );
