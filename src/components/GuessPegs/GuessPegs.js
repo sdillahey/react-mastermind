@@ -4,7 +4,7 @@ import './GuessPegs.css';
 
 const GuessPegs = (props) => {
   return (
-    <div className="guesspegs">
+    <div className="GuessPegs">
       {props.guess.map((g, idx) => (
         <GuessPeg g={g} key={idx}/>
       ))}

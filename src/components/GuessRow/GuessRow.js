@@ -6,8 +6,8 @@ import './GuessRow.css';
 const GuessRow = (props) => {
   return (
       <div className="GuessRow">
-        <GuessPegs guess={props.guess}/>
-        <GuessScore />
+        <GuessPegs guess={props.guess.guess}/>
+        <GuessScore score={props.guess.score}/>
       </div>
   );
 }

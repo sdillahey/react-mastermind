@@ -11,13 +11,25 @@ class App extends Component {
     let colors = ['#A80094', '#DD0038', '#FF732F', '#890022'];
     this.state = {
       colors: colors,
-      secretCode: ['#A80094', '#DD0038', '#FF732F', '#890022'],
+      secretCode: ['#DD0038', '#A80094', '#FF732F', '#890022'],
       selColorIdx: 0,
       guesses: [this.getNewGuess()]
     };
   }
 
-  getNewGuess = () => ['#A80094', '#DD0038', '#FF732F', '#890022'];
+  getNewGuess = () => {
+    return {
+      guess: ['#A80094', '#DD0038', '#FF732F', '#890022'],
+      score: {
+        perfect: 0,
+        almost: 0
+      }
+    };
+  }
+
+  pickColor = (idx) => {
+    this.setState({selColorIdx: idx})
+  }
 
   render() {
     return (
@@ -25,10 +37,13 @@ class App extends Component {
         <header className="App-header">React Mastermind</header>
         <div className="container App-container">
           <div className="App-main">
-            <GameBoard guesses={this.state.guesses}/>
+            <GameBoard guesses={this.state.guesses} />
           </div>
           <div className="App-gamecontrols">
-            <ColorPicker colors={this.state.colors}/>
+            <ColorPicker 
+              colors={this.state.colors} 
+              selColorIdx={this.state.selColorIdx}
+              pickColor={this.pickColor}/>
             <NewGameButton />
             <ScoreButton />
           </div>

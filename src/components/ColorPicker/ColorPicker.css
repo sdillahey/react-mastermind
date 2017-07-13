@@ -1,7 +1,15 @@
+.ColorPicker {
+    margin: 10px;
+    padding-bottom: 30px;
+}
 
-.picker {
+.ColorPicker-btn {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    margin: 7px;
+    margin: 15px;
+}
+
+.ColorPicker-btn:hover {
+    cursor: pointer;
 }
