@@ -1,0 +1,6 @@
+
+.GuessScore {
+    display: flex;
+    flex-flow: row wrap;
+    width: 24px;
+}

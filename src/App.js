@@ -23,11 +23,15 @@ class App extends Component {
     return (
       <div>
         <header className="App-header">React Mastermind</header>
-        <div className="container">
-          <GameBoard guesses={this.state.guesses}/>
-          <ColorPicker colors={this.state.colors}/>
-          <NewGameButton />
-          <ScoreButton />
+        <div className="container App-container">
+          <div className="App-main">
+            <GameBoard guesses={this.state.guesses}/>
+          </div>
+          <div className="App-gamecontrols">
+            <ColorPicker colors={this.state.colors}/>
+            <NewGameButton />
+            <ScoreButton />
+          </div>
         </div>
       </div>
     );
