@@ -6,10 +6,12 @@ import './GuessRow.css';
 const GuessRow = (props) => {
   return (
       <div className="GuessRow">
-        <GuessPegs 
+        <GuessPegs
           guess={props.guess.guess}
           pickGuess={props.pickGuess}/>
-        <GuessScore score={props.guess.score}/>
+        <GuessScore
+          score={props.guess.score}
+          submitGuess={props.submitGuess}/>
       </div>
   );
 }

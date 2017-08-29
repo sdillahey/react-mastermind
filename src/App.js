@@ -40,9 +40,39 @@ class App extends Component {
     this.setState({guesses: guesses});
   }
 
+  scoreGuess = (guessArr) => {
+    let perfect = 0;
+    let scoredArr = guessArr.slice();
+    for (let i=0; i < guessArr.length; i++) {
+      if (guessArr[i] === this.state.secretCode[i]) {
+        perfect++;
+        // need to remove perfectly scored pegs from BOTH the guess and secret
+        scoredArr.splice(i, 1);
+      }
+    }
+    //does this need to handle multiple of the right color in the wrong position? if only a single occurence in the secret...
+    let almost = 0;
+    for (let i=0; i < scoredArr.length; i++) {
+      if (this.state.secretCode.includes(scoredArr[i])) {
+        almost++;
+      }
+    }
+    let score = {perfect: perfect, almost: almost}
+    return score;
+  }
+
+  submitGuess = () => {
+    let guesses = this.state.guesses;
+    //determine the score of the submitted guess
+    guesses[guesses.length-1].score = this.scoreGuess(guesses[guesses.length-1].guess);
+    guesses.push(this.currentGuess());
+    this.setState({guesses: guesses})
+  }
+
+
   newGame = () => {
     this.setState({
-      //set new secret
+      //need to set new secret
       secretCode: ['#DD0038', '#A80094', '#FF732F', '#890022'],
       selColorIdx: 0,
       guesses: [this.currentGuess()]
@@ -57,7 +87,8 @@ class App extends Component {
           <div className="App-main">
             <GameBoard
               guesses={this.state.guesses}
-              pickGuess={this.pickGuess}/>
+              pickGuess={this.pickGuess}
+              submitGuess={this.submitGuess}/>
           </div>
           <div className="App-gamecontrols">
             <ColorPicker
