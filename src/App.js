@@ -40,22 +40,31 @@ class App extends Component {
     this.setState({guesses: guesses});
   }
 
+  newGame = () => {
+    this.setState({
+      //set new secret
+      secretCode: ['#DD0038', '#A80094', '#FF732F', '#890022'],
+      selColorIdx: 0,
+      guesses: [this.currentGuess()]
+    })
+  }
+
   render() {
     return (
       <div>
         <header className="App-header">React Mastermind</header>
         <div className="container App-container">
           <div className="App-main">
-            <GameBoard 
+            <GameBoard
               guesses={this.state.guesses}
               pickGuess={this.pickGuess}/>
           </div>
           <div className="App-gamecontrols">
-            <ColorPicker 
-              colors={this.state.colors} 
+            <ColorPicker
+              colors={this.state.colors}
               selColorIdx={this.state.selColorIdx}
               pickColor={this.pickColor}/>
-            <NewGameButton />
+            <NewGameButton newGame={this.newGame}/>
             <ScoreButton />
           </div>
         </div>
